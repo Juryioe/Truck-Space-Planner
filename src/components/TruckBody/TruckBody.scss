@@ -1,0 +1,81 @@
+.trailer__dim {
+  margin-top: 9rem;
+  color: rgb(60, 60, 60);
+  p {
+    font-weight: 300;
+    text-align: center;
+    padding: 0;
+  }
+  input {
+    width: 65px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 8px;
+    border: 1px solid #3481f3;
+  }
+}
+
+.truck__body {
+  display: flex;
+  flex-direction: column;
+  .head {
+    position: relative;
+    margin: 0 auto;
+    background-image: url(./assets/head.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 290px;
+    height: 210px;
+  }
+
+  .trailer {
+    margin: 0 auto;
+    background-color: #ffffff;
+    outline: 2px solid #000000;
+    border-radius: 3px;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    .elements__container {
+      display: flex;
+      flex-wrap: wrap;
+      height: 10px;
+    }
+    .div_element {
+      border: 1px solid #000000;
+      border-radius: 2px;
+      margin: 1px;
+
+      .dimensions {
+        background-color: #000000;
+        color: #ffffff;
+        font-size: 0.83rem;
+        padding: 1px 2px;
+        margin: 1px;
+        border-radius: 2px;
+      }
+      .note {
+        padding: 3px;
+        font-size: 0.8rem;
+        color: rgb(54, 54, 54);
+      }
+      .delete__icon {
+        margin-left: 5%;
+        width: 16px;
+        cursor: pointer;
+        svg {
+          transition: all 0.2s ease-in-out;
+          width: 16px;
+          height: 16px;
+          fill: #000000;
+        }
+      }
+      .delete__icon:hover {
+        svg {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
