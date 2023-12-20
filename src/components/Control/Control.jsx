@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import { uid } from 'uid'
 import { deleteIcon } from './assets/svg/delete'
+import { rotateIcon } from './assets/svg/rotate'
 import Draggable from 'react-draggable'
 import TruckBody from '../TruckBody/TruckBody'
 import logo from './assets/logo.png'
@@ -16,6 +17,7 @@ const Control = () => {
   const [elements, setElements] = useState([])
   const [errorLength, setErrorLength] = useState(false)
   const [errorWidth, setErrorWidth] = useState(false)
+  const [zIndex, setZIndex] = useState(null)
   const errorCheckLenght = errorLength ? 'form-control error' : 'form-control'
   const errorCheckWidth = errorWidth ? 'form-control error' : 'form-control'
 
@@ -68,6 +70,12 @@ const Control = () => {
               >
                 {deleteIcon}
               </div>
+              <div
+                className="rotate__icon"
+                onClick={() => handleElementRotate(key)}
+              >
+                {rotateIcon}
+              </div>
               <div className="note">{elementNote.current.value}</div>
             </div>
           )
@@ -77,10 +85,33 @@ const Control = () => {
     }
   }
 
+  const handleElementRotate = (key) => {
+    setElements((prevElements) => {
+      return prevElements.map((element) => {
+        if (element.key === key) {
+          return (
+            <div className="flipped" key={element.key}>
+              {element}
+            </div>
+          )
+        }
+        return element
+      })
+    })
+  }
+
   const divElement = (
     <div className="elements__container">
       {elements.map((element, index) => (
-        <Draggable key={index}>{element}</Draggable>
+        <Draggable key={index}>
+          <div
+            // onClick={() => handleElementRotate(index)}
+            className={index === zIndex ? 'z_index' : ''}
+            onMouseEnter={() => setZIndex(index)}
+          >
+            {element}
+          </div>
+        </Draggable>
       ))}
     </div>
   )

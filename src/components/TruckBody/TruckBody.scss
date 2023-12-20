@@ -69,6 +69,12 @@
       display: flex;
       flex-wrap: wrap;
       height: 10px;
+      .z_index {
+        z-index: 5;
+      }
+      .flipped {
+        transform: rotate(90deg);
+      }
     }
     .div_element {
       cursor: grab;
@@ -101,6 +107,24 @@
         }
       }
       .delete__icon:hover {
+        svg {
+          transform: scale(1.1);
+        }
+      }
+      .rotate__icon {
+        position: absolute;
+        bottom: 2%;
+        right: 33%;
+        width: 16px;
+        cursor: pointer;
+        svg {
+          transition: all 0.2s ease-in-out;
+          width: 20px;
+          height: 20px;
+          fill: #000000;
+        }
+      }
+      .rotate__icon:hover {
         svg {
           transform: scale(1.1);
         }

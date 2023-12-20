@@ -15,8 +15,6 @@ const TruckBody = ({ divElement }) => {
     setTrailerHeight(value === '' ? defaultTrailerHeight : value)
   }
 
-  console.log(trailerHeight, trailerWidth)
-
   const handleTrailerWidthChange = (e) => {
     const value = +e.target.value + 4
     setTrailerWidth(value === '' ? defaultTrailerWidth : value)
