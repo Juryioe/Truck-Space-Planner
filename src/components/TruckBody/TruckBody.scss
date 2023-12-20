@@ -6,6 +6,13 @@
     text-align: center;
     padding: 0;
   }
+  .download {
+    cursor: pointer;
+  }
+  .download:hover {
+    cursor: pointer;
+    color: green;
+  }
   input {
     width: 65px;
     display: inline-block;
@@ -15,10 +22,17 @@
   }
 }
 
+.download__block {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
 .truck__body {
   display: flex;
   flex-direction: column;
   .head {
+    color: #ffffff;
     position: relative;
     margin: 0 auto;
     background-image: url(./assets/head.svg);
@@ -30,9 +44,9 @@
   }
 
   .trailer {
-    margin: 0 auto;
+    margin: 2px auto;
     background-color: #ffffff;
-    outline: 2px solid #000000;
+    border: 2px solid #000000;
     border-radius: 3px;
     margin-bottom: 2rem;
     display: flex;
@@ -43,10 +57,9 @@
       height: 10px;
     }
     .div_element {
+      cursor: pointer;
       border: 1px solid #000000;
       border-radius: 2px;
-      margin: 1px;
-
       .dimensions {
         background-color: #000000;
         color: #ffffff;

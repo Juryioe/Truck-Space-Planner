@@ -34,6 +34,11 @@ const Control = () => {
     setElements((prevElements) => prevElements.filter((e) => e.key !== key))
   }
 
+  const handleResetBtn = (e) => {
+    e.preventDefault()
+    setElements([])
+  }
+
   const createNewElement = (e) => {
     e.preventDefault()
     validateInput()
@@ -79,6 +84,7 @@ const Control = () => {
       ))}
     </div>
   )
+
   return (
     <>
       <div className="control__main">
@@ -100,7 +106,7 @@ const Control = () => {
                 defaultValue={1}
               />
             </div>
-            <div>
+            <div id="containeras">
               <label>length</label>
               <input
                 type="text"
@@ -144,11 +150,17 @@ const Control = () => {
               >
                 Create
               </button>
-              <button className="btn btn-outline-danger">Reset</button>
-              <button className="btn btn-outline-success">Print</button>
+              <button
+                className="btn btn-outline-danger"
+                onClick={handleResetBtn}
+              >
+                Reset
+              </button>
+              {/* <button className="btn btn-outline-success">Save</button> */}
             </div>
           </form>
         </div>
+        <div></div>
       </div>
       <TruckBody divElement={divElement} />
     </>
