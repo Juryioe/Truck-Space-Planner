@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { usePDF } from 'react-to-pdf'
+import { downloadSvg } from './assets/svg/download'
 import './TruckBody.scss'
 
 const TruckBody = ({ divElement }) => {
@@ -29,9 +30,9 @@ const TruckBody = ({ divElement }) => {
   return (
     <div ref={targetRef}>
       <div className="trailer__dim">
-        <p className="download" onClick={() => toPDF()}>
-          Download the loading plan
-        </p>
+        <div className="download__wrap">
+          <p onClick={() => toPDF()}>{downloadSvg} Download the loading plan</p>
+        </div>
         <p>
           Truck trailer length
           <input

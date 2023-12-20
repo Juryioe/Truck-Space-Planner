@@ -154,9 +154,8 @@ const Control = () => {
                 className="btn btn-outline-danger"
                 onClick={handleResetBtn}
               >
-                Reset
+                Remove all goods
               </button>
-              {/* <button className="btn btn-outline-success">Save</button> */}
             </div>
           </form>
         </div>

@@ -6,19 +6,32 @@
     text-align: center;
     padding: 0;
   }
-  .download {
-    cursor: pointer;
-  }
-  .download:hover {
-    cursor: pointer;
-    color: green;
-  }
   input {
     width: 65px;
     display: inline-block;
     text-align: center;
     margin: 0 8px;
     border: 1px solid #3481f3;
+  }
+  .download__wrap {
+    display: flex;
+    justify-content: center;
+    p {
+      cursor: pointer;
+    }
+    p:hover {
+      cursor: pointer;
+      color: green;
+    }
+    p:hover > svg {
+      fill: green;
+    }
+    svg {
+      transform: translateY(-1px) translateX(-2px);
+      width: 14px;
+      height: 14px;
+      fill: #000000;
+    }
   }
 }
 
@@ -44,6 +57,7 @@
   }
 
   .trailer {
+    position: relative;
     margin: 2px auto;
     background-color: #ffffff;
     border: 2px solid #000000;
@@ -57,7 +71,7 @@
       height: 10px;
     }
     .div_element {
-      cursor: pointer;
+      cursor: grab;
       border: 1px solid #000000;
       border-radius: 2px;
       .dimensions {
@@ -74,7 +88,9 @@
         color: rgb(54, 54, 54);
       }
       .delete__icon {
-        margin-left: 5%;
+        position: absolute;
+        bottom: 0;
+        right: 3px;
         width: 16px;
         cursor: pointer;
         svg {
