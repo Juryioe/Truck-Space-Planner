@@ -64,17 +64,19 @@ const Control = () => {
               <div className="dimensions">
                 {elementLength.current.value}x{elementWidth.current.value}
               </div>
-              <div
-                className="delete__icon"
-                onClick={() => handleRemoveElement(key)}
-              >
-                {deleteIcon}
-              </div>
-              <div
-                className="rotate__icon"
-                onClick={() => handleElementRotate(key)}
-              >
-                {rotateIcon}
+              <div className="icons__wrap">
+                <div
+                  className="delete__icon"
+                  onClick={() => handleRemoveElement(key)}
+                >
+                  {deleteIcon}
+                </div>
+                <div
+                  className="rotate__icon"
+                  onClick={() => handleElementRotate(key)}
+                >
+                  {rotateIcon}
+                </div>
               </div>
               <div className="note">{elementNote.current.value}</div>
             </div>
@@ -105,7 +107,6 @@ const Control = () => {
       {elements.map((element, index) => (
         <Draggable key={index}>
           <div
-            // onClick={() => handleElementRotate(index)}
             className={index === zIndex ? 'z_index' : ''}
             onMouseEnter={() => setZIndex(index)}
           >

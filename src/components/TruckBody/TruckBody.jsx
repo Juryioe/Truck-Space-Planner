@@ -6,9 +6,14 @@ import './TruckBody.scss'
 const TruckBody = ({ divElement }) => {
   const defaultTrailerWidth = 252
   const defaultTrailerHeight = 1364
+  const { toPDF, targetRef } = usePDF({ filename: 'Loading_plan.pdf' })
   const [trailerWidth, setTrailerWidth] = useState(defaultTrailerWidth)
   const [trailerHeight, setTrailerHeight] = useState(defaultTrailerHeight)
-  const { toPDF, targetRef } = usePDF({ filename: 'Loading_plan.pdf' })
+
+  const trailerDimensions = {
+    height: trailerHeight + 'px',
+    width: trailerWidth + 'px',
+  }
 
   const handleTrailerHeightChange = (e) => {
     const value = +e.target.value + 4
@@ -20,16 +25,17 @@ const TruckBody = ({ divElement }) => {
     setTrailerWidth(value === '' ? defaultTrailerWidth : value)
   }
 
-  const trailerDimensions = {
-    height: trailerHeight + 'px',
-    width: trailerWidth + 'px',
+  const handleSaveToPdf = () => {
+    toPDF()
   }
 
   return (
     <div ref={targetRef}>
       <div className="trailer__dim">
         <div className="download__wrap">
-          <p onClick={() => toPDF()}>{downloadSvg} Download the loading plan</p>
+          <p onClick={handleSaveToPdf}>
+            {downloadSvg} Download the loading plan
+          </p>
         </div>
         <p>
           Truck trailer length
