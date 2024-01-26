@@ -1,0 +1,64 @@
+$completedTaskColor: #7ed73f;
+
+.todoWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #262626;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  margin-top: 8px;
+  padding-left: 5px;
+  .task {
+    font-size: 0.95rem;
+    max-width: 320px;
+    font-weight: 400;
+  }
+  .completedTask {
+    text-decoration: line-through;
+    color: $completedTaskColor;
+    font-weight: 400;
+  }
+  .taskWrapper {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 5px;
+  }
+  .todoIcon {
+    color: #000000;
+  }
+  .completedtodoIcon {
+    color: $completedTaskColor;
+  }
+  .deleteIcon {
+    color: #c5bebe;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  .deleteIcon:hover {
+    color: #dc3545;
+    transform: scale(1.1);
+  }
+  .completeIcon {
+    color: #c5bebe;
+    transition: all 0.2s ease-in-out;
+
+    cursor: pointer;
+  }
+  .completeIcon:hover {
+    color: $completedTaskColor;
+    transform: scale(1.1);
+  }
+  .buttons {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+}
+
+.todoWrapper:hover {
+  background-color: #f1f1f1;
+}

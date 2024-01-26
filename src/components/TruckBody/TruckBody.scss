@@ -54,6 +54,7 @@
     background-size: contain;
     width: 290px;
     height: 210px;
+    z-index: -100;
   }
 
   .trailer {
@@ -122,5 +123,14 @@
     .div_element:hover > .icons__wrap > .rotate__icon {
       display: block;
     }
+  }
+}
+
+.todoAppContainer {
+  position: relative;
+  .todoApp {
+    position: absolute;
+    top: 30px;
+    left: 0;
   }
 }

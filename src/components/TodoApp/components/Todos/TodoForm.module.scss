@@ -1,0 +1,24 @@
+.forma {
+  margin-top: 5px;
+  width: 100%;
+  gap: 5px;
+  display: flex;
+  input {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    width: 100%;
+    outline: none;
+  }
+  input::placeholder {
+    color: rgb(193, 193, 193);
+    font-size: 1rem;
+  }
+  input:focus {
+    border: 1px solid #0e6efd;
+  }
+}

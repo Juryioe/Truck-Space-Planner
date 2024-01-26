@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { uid } from 'uid'
-import { deleteIcon } from './assets/svg/delete'
 import { rotateIcon } from './assets/svg/rotate'
+import { TiDelete } from 'react-icons/ti'
 import Draggable from 'react-draggable'
 import TruckBody from '../TruckBody/TruckBody'
 import logo from './assets/logo.png'
@@ -69,7 +69,7 @@ const Control = () => {
                   className="delete__icon"
                   onClick={() => handleRemoveElement(key)}
                 >
-                  {deleteIcon}
+                  <TiDelete />
                 </div>
                 <div
                   className="rotate__icon"
