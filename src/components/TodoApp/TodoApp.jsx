@@ -43,10 +43,12 @@ function App() {
 
   return (
     <div className={styles.todoAppContainer}>
-      <div className={styles.logoWrapper}>
-        <IoCheckmarkDoneCircleOutline size={'2rem'} className="logoIcon" />
-        <span className={styles.h6}>What should be done?</span>
-      </div>
+      <strong className="cursor">
+        <div className={styles.logoWrapper} title="I can be moved around!">
+          <IoCheckmarkDoneCircleOutline size={'2rem'} className="logoIcon" />
+          <span className={styles.h6}>What should be done?</span>
+        </div>
+      </strong>
       <TodoForm addTodo={addTodoHandler} />
       <TodoList
         todos={todos}

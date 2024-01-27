@@ -15,11 +15,13 @@ function TodoForm({ addTodo }) {
     <form className={styles.forma} onSubmit={onSubmitHandler}>
       <input
         type="text"
+        className="form-control"
         value={text}
         placeholder="Add a new task"
         onChange={(e) => setText(e.target.value)}
       />
       <button
+        disabled={!text}
         className="btn btn-outline-primary"
         type="submit"
         title="Add new task"

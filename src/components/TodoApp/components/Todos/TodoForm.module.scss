@@ -1,7 +1,7 @@
 .forma {
-  margin-top: 5px;
+  margin-top: 7px;
   width: 100%;
-  gap: 5px;
+  gap: 8px;
   display: flex;
   input {
     background-color: #ffffff;
@@ -17,8 +17,5 @@
   input::placeholder {
     color: rgb(193, 193, 193);
     font-size: 1rem;
-  }
-  input:focus {
-    border: 1px solid #0e6efd;
   }
 }

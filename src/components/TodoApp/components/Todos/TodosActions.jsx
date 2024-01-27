@@ -6,19 +6,20 @@ function TodosActions({ setTodos, deleteCompletedHandler }) {
   return (
     <div className={styles.todoActionsContainer}>
       <button
-        className={styles.button}
+        className={styles.btn}
         title="Reset all task"
         onClick={() => setTodos([])}
       >
-        <LuRefreshCcw />
+        <LuRefreshCcw className={styles.iconLuRefreshCCw} />
         <span>Reset all</span>
       </button>
       <button
-        className={styles.button}
+        className={styles.btn}
         title="Delete completed tasks"
         onClick={deleteCompletedHandler}
       >
-        <AiFillDelete /> <span>Delete completed</span>
+        <AiFillDelete className={styles.iconAifillDelete} />
+        <span>Delete completed</span>
       </button>
     </div>
   )

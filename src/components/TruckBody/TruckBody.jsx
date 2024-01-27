@@ -66,12 +66,8 @@ const TruckBody = ({ divElement }) => {
           </div>
         </div>
         <div className="todoAppContainer">
-          <Draggable defaultPosition={{ x: 0, y: 0 }}>
-            <div
-              className="todoApp"
-              title="You can drag me!"
-              style={{ width: '300px' }}
-            >
+          <Draggable handle="strong">
+            <div className="todoApp" style={{ width: '310px' }}>
               <TodoApp />
             </div>
           </Draggable>
