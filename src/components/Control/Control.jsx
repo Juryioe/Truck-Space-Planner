@@ -6,7 +6,6 @@ import Draggable from 'react-draggable'
 import TruckBody from '../TruckBody/TruckBody'
 import logo from './assets/logo.png'
 import './Control.scss'
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Control = () => {
   const elementLength = useRef()

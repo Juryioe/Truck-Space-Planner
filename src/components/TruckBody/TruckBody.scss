@@ -99,6 +99,7 @@
         align-items: center;
         .delete__icon,
         .rotate__icon {
+          transition: all 0.2s ease-in-out;
           display: none;
           margin-left: 3px;
           cursor: pointer;
@@ -109,11 +110,13 @@
             fill: #000000;
           }
         }
-        .delete__icon,
         .rotate__icon:hover {
           svg {
-            transform: scale(1.1);
+            transform: scale(1.2);
           }
+        }
+        .delete__icon:hover {
+          transform: scale(1.3);
         }
       }
     }

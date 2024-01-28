@@ -4,9 +4,11 @@ import { uid } from 'uid'
 import TodoForm from './components/Todos/TodoForm'
 import TodoList from './components/Todos/TodoList'
 import styles from './TodoApp.module.scss'
+import Modal from './components/Modal'
 
 function App() {
   const [todos, setTodos] = useState([])
+  const [modal, setModal] = useState(false)
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem('todos'))
@@ -37,12 +39,17 @@ function App() {
     setTodos(todos.filter((todo) => !todo.isCompleted))
   }
 
+  const resetTodosHandler = () => {
+    setModal(true)
+  }
+
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos))
   }, [todos])
 
   return (
     <div className={styles.todoAppContainer}>
+      <Modal modal={modal} setModal={setModal} setTodos={setTodos} />
       <strong className="cursor">
         <div className={styles.logoWrapper} title="I can be moved around!">
           <IoCheckmarkDoneCircleOutline size={'2rem'} className="logoIcon" />
@@ -56,6 +63,7 @@ function App() {
         deleteTodo={deleteTodoHandler}
         todoCompleted={todoCompletedHandler}
         deleteCompletedHandler={deleteCompletedTodoHandler}
+        resetTodosHandler={resetTodosHandler}
       />
     </div>
   )

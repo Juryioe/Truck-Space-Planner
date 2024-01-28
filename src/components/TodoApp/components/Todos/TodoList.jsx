@@ -9,6 +9,7 @@ function TodoList({
   todoCompleted,
   setTodos,
   deleteCompletedHandler,
+  resetTodosHandler,
 }) {
   return (
     <div className={styles.todoListContainer}>
@@ -18,6 +19,7 @@ function TodoList({
             setTodos={setTodos}
             todo={todo}
             deleteCompletedHandler={deleteCompletedHandler}
+            resetTodosHandler={resetTodosHandler}
           />
         )}
       </div>
